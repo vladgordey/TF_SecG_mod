@@ -35,7 +35,7 @@ resource "aws_security_group" "default" {
 # Our elb security group to access
 # the ELB over HTTP
 resource "aws_security_group" "elb" {
-  vpc_id = "${aws_vpc.main.id}"
+  vpc_id = "${var.vpc_id}"
   name        = "${var.short_name}-sg_elb"
   description = "ELB SD for terraform"
 
@@ -74,7 +74,7 @@ resource "aws_security_group" "elb" {
 # Our elb security group to access
 # the ELB over HTTP
 resource "aws_security_group" "RDS" {
-  vpc_id = "${aws_vpc.main.id}"
+  vpc_id = "${var.vpc_id}"
   name        = "${var.short_name}-RDS"
   description = "ELB SD for terraform"
 
