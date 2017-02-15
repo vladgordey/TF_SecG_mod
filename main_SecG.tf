@@ -83,7 +83,7 @@ resource "aws_security_group" "RDS" {
     from_port   = "3306"
     to_port     = "3306"
     protocol    = "tcp"
-    security_groups = [${"aws_security_group.default.id"}]
+    security_groups = ["${aws_security_group.default.id}"]
   }
   
   # outbound internet access
